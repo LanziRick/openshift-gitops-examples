@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bgd-app
-  namespace: openshift-gitops
+  namespace: argocd
 spec:
   destination:
     namespace: bgd
@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: apps/bgd/overlays/bgd
-    repoURL: https://github.com/redhat-developer-demos/openshift-gitops-examples
+    repoURL: https://github.com/LanziRick/openshift-gitops-examples.git
     targetRevision: main
   syncPolicy:
     automated:
